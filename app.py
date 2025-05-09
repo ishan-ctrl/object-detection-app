@@ -15,7 +15,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # Load YOLOv8 model
-# model = YOLO("yolov8n.pt")
+model = YOLO("yolov8n.pt")
 
 # Serve index.html at root "/"
 @app.get("/", response_class=HTMLResponse)
@@ -24,7 +24,7 @@ async def root(request: Request):
 
 
 # Example: Basic detect route (optional — you can expand this)
-@app.post("/detect", response_class=HTMLResponse)
+@app.post("camera/detect", response_class=HTMLResponse)
 async def detect(request: Request, file: UploadFile = File(...)):
     contents = await file.read()
     temp_file = "temp.jpg"
@@ -41,6 +41,7 @@ async def detect(request: Request, file: UploadFile = File(...)):
     os.remove(temp_file)  # Clean up
 
     return templates.TemplateResponse("detect.html", {"request": request, "result_path": "/static/result.jpg"})
+
 @app.get("/", response_class=HTMLResponse)
 async def root(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
