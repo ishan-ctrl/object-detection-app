@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mobile Camera Detection</title>
+</head>
+<body>
+  <h2>Real-Time Object Detection</h2>
+
+  <video id="video" width="100%" autoplay playsinline></video>
+  <br>
+  <button onclick="switchCamera()">Switch Camera</button>
+
+  <script>
+    let video = document.getElementById("video");
+    let currentFacingMode = "environment"; // back camera
+
+    function startCamera(facingMode) {
+      navigator.mediaDevices.getUserMedia({
+        video: { facingMode: facingMode },
+        audio: false
+      })
+      .then((stream) => {
+        video.srcObject = stream;
+      })
+      .catch((err) => {
+        alert("Camera access denied: " + err);
+      });
+    }
+
+    function switchCamera() {
+      currentFacingMode = currentFacingMode === "user" ? "environment" : "user";
+      startCamera(currentFacingMode);
+    }
+
+    // Start with back camera
+    startCamera(currentFacingMode);
+  </script>
+</body>
+</html>

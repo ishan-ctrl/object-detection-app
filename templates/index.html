@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TrashVision - Landing Page</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    /* ✅ BACKGROUND IMAGE — Covers Entire Page */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('space.webp') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -1;
+      opacity: 1;
+    }
+
+    .content {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 100vh;
+      padding-bottom: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #bbb;
+      margin-bottom: 1.5em;
+    }
+
+    .start-btn {
+      background-color: #00b894;
+      color: white;
+      padding: 14px 28px;
+      border-radius: 30px;
+      font-size: 1.2em;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .start-btn:hover {
+      background-color: #00a383;
+    }
+
+    .friend-section {
+      margin-top: 40px;
+      width: 90%;
+      max-width: 1000px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #1c1c1c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0,0,0,0.4);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      height: 360px;
+    }
+
+    .card img {
+      width: 100%;
+      height: 75%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+    }
+
+    .card h3 {
+      margin: 12px;
+      padding-bottom: 10px;
+      font-size: 1.1em;
+      color: #00b894;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #ccc;
+      font-size: 0.9em;
+    }
+
+    @media (max-width: 600px) {
+      .friend-section {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      header p {
+        font-size: 1em;
+      }
+
+      .start-btn {
+        padding: 12px 22px;
+        font-size: 1em;
+      }
+
+      .card h3 {
+        font-size: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="content">
+    <header>
+      <h1>TrashVision</h1>
+      <p>Smart Object Detection by Ishan and Team</p>
+      <a href="detect.html" class="start-btn">Start Detection</a>
+    </header>
+
+    <section class="friend-section">
+      <div class="card">
+        <img src="friends/ishan.jpg" alt="Ishan" />
+        <h3>Ishan</h3>
+      </div>
+      <div class="card">
+        <img src="friends/Digamber.png" alt="Digamber" />
+        <h3>Digamber</h3>
+      </div>
+      <div class="card">
+        <img src="friends/Shamshad.png" alt="Shamshad" />
+        <h3>Shamshad</h3>
+      </div>
+      <div class="card">
+        <img src="friends/alok.jpg" alt="Alok" />
+        <h3>Alok</h3>
+      </div>
+      <div class="card">
+        <img src="friends/Honey.jpg" alt="Honey" />
+        <h3>Honey</h3>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 Ishan's Object Detection Project
+    </footer>
+  </div>
+  <hr style="margin-top: 40px;">
+
+  
+    <section style="padding: 40px; background: linear-gradient(to right, #eef2f3, #ffffff); text-align: center;">
+      <h2 style="font-size: 1.8rem; color: #333;">Explore Applications</h2>
+      <p style="font-size: 1.1rem; color: #555;">Discover real-world use cases of object detection and garbage classification.</p>
+      <a href="applications.html" target="_blank" style="
+        display: inline-block;
+        margin-top: 20px;
+        padding: 12px 28px;
+        background-color: #28a745;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-size: 1rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        transition: 0.3s;
+      " onmouseover="this.style.backgroundColor='#218838'" onmouseout="this.style.backgroundColor='#28a745'">
+        🚀 View Applications
+      </a>
+    </section>
+    
+  </section>
+  
+</body>
+</html>
