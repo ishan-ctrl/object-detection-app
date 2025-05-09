@@ -41,3 +41,6 @@ async def detect(request: Request, file: UploadFile = File(...)):
     os.remove(temp_file)  # Clean up
 
     return templates.TemplateResponse("detect.html", {"request": request, "result_path": "/static/result.jpg"})
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    return templates.TemplateResponse("index.html", {"request": request})
