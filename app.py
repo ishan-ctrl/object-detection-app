@@ -15,7 +15,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 # Load YOLOv8 model
-model = YOLO("yolov8n.pt")
+# model = YOLO("yolov8n.pt")
 
 # Serve index.html at root "/"
 @app.get("/", response_class=HTMLResponse)
